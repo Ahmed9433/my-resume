@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../assets/Fonts/PlayfairDisplay-VariableFont.woff2') format('woff2'),
+    url('../assets/Fonts/PlayfairDisplay-VariableFont.ttf') format('truetype');
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Product Sans';
+  src: url('../assets/Fonts/GoogleSans-VariableFont.woff2') format('woff2'),
+    url('../assets/Fonts/GoogleSans-VariableFont.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  /* Color Palette */
+  
+
+  /* Typography */
+  --font-primary: 'Playfair Display', serif;
+  --font-secondary: 'Product Sans', sans-serif;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
