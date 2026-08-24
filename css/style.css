@@ -1,32 +1,170 @@
+/* ================================
+   IMPORTS
+   ================================ */
+
 @font-face {
-  font-family: 'Playfair Display';
-  src: url('../assets/Fonts/PlayfairDisplay-VariableFont.woff2') format('woff2'),
-    url('../assets/Fonts/PlayfairDisplay-VariableFont.ttf') format('truetype');
+  font-family: "Playfair Display";
+  src:
+    url("../assets/Fonts/PlayfairDisplay-VariableFont.woff2") format("woff2"),
+    url("../assets/Fonts/PlayfairDisplay-VariableFont.ttf") format("truetype");
   font-weight: 400 900;
-  font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Product Sans';
-  src: url('../assets/Fonts/GoogleSans-VariableFont.woff2') format('woff2'),
-    url('../assets/Fonts/GoogleSans-VariableFont.ttf') format('truetype');
+  font-family: "Inter";
+  src:
+    url("../assets/Fonts/Inter-VariableFont.woff2") format("woff2"),
+    url("../assets/Fonts/Inter-VariableFont.ttf") format("truetype");
   font-weight: 100 900;
-  font-style: normal;
   font-display: swap;
 }
+
+/* ================================
+   CUSTOM PROPERTIES
+   ================================ */
+
 :root {
   /* Color Palette */
-  
+  --page-background: #f0f0f0;
+  --card-background: #ffffff;
+  --primary-text: #1a1a1a;
+  --secondary-text: #666666;
+  --border-color: #e0e0e0;
 
   /* Typography */
-  --font-primary: 'Playfair Display', serif;
-  --font-secondary: 'Product Sans', sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-primary: "Inter", system-ui, sans-serif;
+
+  /* Font Size */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 1.75rem;
+  --font-size-display: 3rem;
+
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line Heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.8;
+
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.01em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.08em;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4rem;
+
+  /* Layout */
+  --resume-max-width: 900px;
+  --resume-padding-x: 3rem;
+  --resume-padding-y: 3rem;
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.08);
+  --heading-border: 2px solid #1a1a1a;
+
+  /* Transitions */
+  --transition-fast: 0.16s ease;
+  --transition-normal: 0.26s ease;
 }
+
+/* ================================
+   RESET & BASE
+   ================================ */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-li {
-  list-style: none;
+address {
+  font-style: normal;
 }
+
+/* ================================
+   BASE TYPOGRAPHY
+   ================================ */
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--primary-text);
+  background-color: var(--page-background);
+}
+h1 {
+  font-family: var(--font-display);
+  font-size: var(--font-size-display);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+}
+h2 {
+  text-transform: uppercase;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-wide);
+}
+h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+}
+h4 {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+}
+a {
+  text-decoration: none;
+  color: var(--primary-text);
+  transition: color var(--transition-fast);
+}
+a:hover {
+  color: var(--secondary-text);
+  text-decoration: underline;
+}
+a:focus-visible {
+  outline: 2px solid var(--primary-text);
+  outline-offset: 0.075rem;
+}
+strong {
+  font-weight: var(--font-weight-bold);
+}
+em {
+  font-style: italic;
+}
+/* ================================
+   LAYOUT
+   ================================ */
+
+/* ================================
+   COMPONENTS
+   ================================ */
+
+/* ================================
+   UTILITIES
+   ================================ */
+
+/* ================================
+   STATES & TRANSITIONS
+   ================================ */
+
+/* ================================
+   RESPONSIVE
+   ================================ */
