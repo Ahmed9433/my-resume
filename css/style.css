@@ -29,7 +29,7 @@
   --card-background: #ffffff;
   --primary-text: #1a1a1a;
   --secondary-text: #666666;
-  --border-color: #e0e0e0;
+  --border-color: #c8c8c8;
 
   /* Typography */
   --font-display: "Playfair Display", Georgia, serif;
@@ -94,6 +94,9 @@
 address {
   font-style: normal;
 }
+li {
+  list-style: none;
+}
 
 /* ================================
    BASE TYPOGRAPHY
@@ -114,6 +117,7 @@ h1 {
   line-height: var(--line-height-tight);
   letter-spacing: var(--letter-spacing-tight);
 }
+/* For 'h2' spacing - see LAYOUT section */
 h2 {
   text-transform: uppercase;
   font-size: var(--font-size-xl);
@@ -130,18 +134,11 @@ h4 {
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-semibold);
 }
+/* For 'a' hover and focus states - see STATES & TRANSITIONS section */
 a {
   text-decoration: none;
   color: var(--primary-text);
   transition: color var(--transition-fast);
-}
-a:hover {
-  color: var(--secondary-text);
-  text-decoration: underline;
-}
-a:focus-visible {
-  outline: 2px solid var(--primary-text);
-  outline-offset: 0.075rem;
 }
 strong {
   font-weight: var(--font-weight-bold);
@@ -149,10 +146,61 @@ strong {
 em {
   font-style: italic;
 }
+
 /* ================================
    LAYOUT
    ================================ */
 
+section {
+  padding-bottom: var(--space-4);
+}
+section:last-child {
+  padding-bottom: 0;
+}
+h2 {
+  border-bottom: var(--heading-border);
+  padding-bottom: var(--space-1);
+  margin-bottom: var(--space-3);
+}
+.main-content {
+  max-width: var(--resume-max-width);
+  background-color: var(--card-background);
+  margin-inline: auto;
+  box-shadow: var(--card-shadow);
+  padding: var(--resume-padding-y) var(--resume-padding-x);
+  margin-block: var(--space-6);
+}
+.sec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-color);
+}
+.header-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.header-main p {
+  font-size: var(--font-size-2xl);
+}
+.header-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-1);
+}
+.contact-item a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+.contact-item a svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
 /* ================================
    COMPONENTS
    ================================ */
@@ -164,6 +212,19 @@ em {
 /* ================================
    STATES & TRANSITIONS
    ================================ */
+
+*::selection {
+  background-color: var(--primary-text);
+  color: var(--page-background);
+}
+a:hover {
+  color: var(--secondary-text);
+  text-decoration: underline;
+}
+a:focus-visible {
+  outline: 2px solid var(--primary-text);
+  outline-offset: 0.075rem;
+}
 
 /* ================================
    RESPONSIVE
