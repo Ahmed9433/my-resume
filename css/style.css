@@ -174,7 +174,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-3);
   border-bottom: 1px solid var(--border-color);
 }
 .header-main {
@@ -201,6 +201,7 @@ h2 {
   height: 14px;
   flex-shrink: 0;
 }
+
 /* ================================
    COMPONENTS
    ================================ */
@@ -301,10 +302,6 @@ h2 {
 }
 
 /* ================================
-   UTILITIES
-   ================================ */
-
-/* ================================
    STATES & TRANSITIONS
    ================================ */
 
@@ -328,3 +325,62 @@ a:focus-visible {
 /* ================================
    RESPONSIVE
    ================================ */
+
+@media (max-width: 900px) {
+  .main-content {
+    margin-block: 0;
+    box-shadow: none;
+    padding: var(--space-5) var(--space-6);
+  }
+  .sec-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+  .header-contact {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  h1 {
+    font-size: var(--font-size-2xl);
+  }
+  .header-main p {
+    font-size: var(--font-size-lg);
+  }
+  a:hover {
+    color: var(--primary-text);
+    text-decoration: none;
+  }
+  .projects-links a:hover {
+    color: var(--primary-text);
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: var(--space-4) var(--space-3);
+  }
+  h2 {
+    font-size: var(--font-size-md);
+    letter-spacing: var(--letter-spacing-normal);
+  }
+  .header-contact {
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+}
+
+@media print {
+  body {
+    background-color: #fff;
+  }
+  .main-content {
+    background-color: #fff;
+    color: #000;
+    box-shadow: none;
+    margin: 0;
+    padding: var(--space-4);
+  }
+}
